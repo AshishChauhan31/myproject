@@ -18,9 +18,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class signupActivity extends AppCompatActivity {
     private EditText name,mail,mob,address,pass;
-    private Button submit;
+    private Button submit,logout;
     private FirebaseAuth mAuth;
     private String username,email,phone,usrAddress,password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class signupActivity extends AppCompatActivity {
         address=findViewById(R.id.etAddress);
         pass=findViewById(R.id.etPass);
         submit=findViewById(R.id.btn_login);
-
+        logout=findViewById(R.id.btn_logout);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
