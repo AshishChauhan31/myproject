@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 //username.getEditText().getText().toString(),
                 //password.getEditText().getText().toString()
 
-                Task<AuthResult> authResultTask = mAuth.signInWithEmailAndPassword(username.getEditText().toString(),
-                        password.getEditText().toString())
+                Task<AuthResult> authResultTask = mAuth.signInWithEmailAndPassword(username.getEditText().getText().toString(),
+                        password.getEditText().getText().toString())
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "signInWithEmail:success",
                                             Toast.LENGTH_SHORT).show();
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    startActivity(new Intent(MainActivity.this,HomeActivity.class));
+                                    startActivity(new Intent(MainActivity.this,HomeActivty.class));
                                     //updateUI(user);
                                 } else {
                                     // If sign in fails, display a message to the user.
